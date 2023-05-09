@@ -69,23 +69,29 @@ from tblEmployee17
 join tblDepartment17
 on tblEmployee17.DepartmentId = tblDepartment17.DeptId
 where tblDepartment17.DeptName = 'IT'
+SELECT * from vWITDepartment_Employees
 
 --Column Level Security:
 --Salary is confidential information and I want to prevent access to that column. To achieve this, we can create a view, which excludes the Salary column, and then grant the end user access to this views, rather than the base tables.
 
 --View that returns all columns except Salary column:
-DROP VIEW vWEmployeesNonConfidentialData
+--DROP VIEW vWEmployeesNonConfidentialData
+--Cannot drop the view 'vWEmployeesNonConfidentialData', because it does not exist or you do not have permission................??
+
+
 Create View vWEmployeesNonConfidentialData
 as
 Select Id, [Name], Gender, DeptName
 from tblEmployee17
 join tblDepartment17
 on tblEmployee17.DepartmentId = tblDepartment17.DeptId
+--now execute 
 SELECT * from  vWEmployeesNonConfidentialData
 
 -- Views can be used to present only aggregated data and hide detailed data.
 --View that returns summarized data, Total number of employees by Department.
 --DROP VIEW vWEmployeesCountByDepartment
+
 Create View vWEmployeesCountByDepartment
 as
 Select DeptName, COUNT(Id) as TotalEmployees17
@@ -93,6 +99,7 @@ from tblEmployee17
 join tblDepartment17
 on tblEmployee17.DepartmentId = tblDepartment17.DeptId
 Group By DeptName
+----now execute
 SELECT * from vWEmployeesCountByDepartment
 
 --To look at view definition - 
@@ -110,10 +117,11 @@ Group By DeptName
 SELECT * from vWEmployeesCountByDepartment
 
 --To Drop a view - 
-DROP VIEW name vWEmployeesNonConfidentialData
+DROP VIEW vWEmployeesNonConfidentialData  
 select  * from sys.views
 
 ---------------------Updateable Views 
+
 Drop Table if exists tblEmployee18;
 CREATE TABLE tblEmployee18
 (
@@ -224,6 +232,7 @@ Insert into tblProduct Values(3, 'Pencils', 11)
 Insert into tblProduct Values(4, 'Clips', 10)
 
 --Script to create table tblProductSales
+drop table if exists tblProductSales; 
 Create Table tblProductSales
 (
  ProductId int,
