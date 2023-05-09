@@ -1,0 +1,23 @@
+Functions in SQL server can be broadly divided into 2 categoris
+1. Built-in functions
+2. User Defined functions
+
+ --Built in string functions
+ASCII,Lower,Upper,LTRIM,RTRIM, REVERSE,LEN
+Left, Right, Charindex and Substring functions
+Replicate, Space, Patindex, Replace and Stuff functions
+
+ --DateTime functions
+IsDate, Day, Month, Year and DateName functions
+DatePart, DateAdd and DateDiff functions
+
+Convert and Cast functions
+
+--Mathematical functions
+Abs, Ceiling, Floor, Power, Rand, Square, Sqrt, and Round functions
+
+Scalar User Defined functions
+Inline Table Valued functions
+Multi-Statement Table Valued functions
+
+--Important concepts related to functions in sql server
