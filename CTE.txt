@@ -1,0 +1,10 @@
+The common table expression (CTE) is a powerful construct in SQL that helps simplify a query. CTEs work as virtual tables (with records and columns), created during the execution of a query, used by the query, and eliminated after query execution.
+
+CTE benefits
+CTEs make code more readable. And readability makes queries easier to debug.
+
+CTEs can reference the results multiple times throughout the query. By storing the results of the subquery, you can reuse them throughout a larger query.
+
+CTEs can help you perform multi-level aggregations. Use CTEs to store the results of aggregations, which you can then summarize in the main query.
+
+https://www.javatpoint.com/common-table-expression-in-sql-server
